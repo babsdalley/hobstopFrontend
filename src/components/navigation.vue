@@ -34,7 +34,7 @@ export default {
       }
   },
   beforeCreate(){
-    this.$http.get('https://hobstopbackend.herokuapp.com//user/getUserDetails?userId=' + this.$session.get('userId'))
+    this.$http.get('https://hobstopbackend.herokuapp.com/user/getUserDetails?userId=' + this.$session.get('userId'))
     .then(response => {
         console.log(response);
         this.userDetails = response.body;
