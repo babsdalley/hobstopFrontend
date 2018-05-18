@@ -30,7 +30,7 @@ export default {
     },
     methods: {
         editHobby(){
-            this.$http.put('https://hobstopbackend.herokuapp.com/hobby/editHobby?id='+ this.$route.query.id + '&name=' + this.name)
+            this.$http.put('http://localhost:1337/hobby/editHobby?id='+ this.$route.query.id + '&name=' + this.name)
                 .then(response => {
                     console.log(response);
                     this.$router.push('/userProfile')

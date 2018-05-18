@@ -39,7 +39,7 @@ export default {
     },
     methods:{
         signInUser(){
-            this.$http.put('https://hobstopbackend.herokuapp.com/user/signin', this.user)
+            this.$http.put('http://localhost:1337/user/signin', this.user)
                 .then(response => {
                     console.log(response);
                     this.$session.start();

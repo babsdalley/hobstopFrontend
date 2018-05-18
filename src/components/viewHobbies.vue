@@ -64,7 +64,7 @@ export default {
             this.$router.push('/userProfile/createHobby');
         },
         deleteHobby(index,hobbyId){
-            this.$http.delete('https://hobstopbackend.herokuapp.com/hobby/deleteHobby?id=' + hobbyId)
+            this.$http.delete('http://localhost:1337/hobby/deleteHobby?id=' + hobbyId)
                 .then(response => {
                     console.log(response);
                     this.hobbiesArray.splice(index, 1)
@@ -78,7 +78,7 @@ export default {
         }
     },
     beforeCreate(){
-        this.$http.get('https://hobstopbackend.herokuapp.com/user/getUserDetails?userId=' + this.$session.get('userId'))
+        this.$http.get('http://localhost:1337/user/getUserDetails?userId=' + this.$session.get('userId'))
         .then(response => {
             console.log(response);
             this.userDetails = response.body;
@@ -87,7 +87,7 @@ export default {
             console.log(error);
         });
 
-        this.$http.get('https://hobstopbackend.herokuapp.com/hobby/getUserHobbies?userId=' + this.$session.get('userId'))
+        this.$http.get('http://localhost:1337/hobby/getUserHobbies?userId=' + this.$session.get('userId'))
             .then(response => {
                 console.log(response);
                 this.hobbiesArray = response.body;
