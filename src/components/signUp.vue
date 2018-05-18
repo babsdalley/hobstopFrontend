@@ -51,7 +51,7 @@ export default {
   },
   methods:{
       submitNewUser(){
-        this.$http.post('http://localhost:1337/user/signup', this.user)
+        this.$http.post('https://hobstopbackend.herokuapp.com/user/signup', this.user)
             .then(response => {
                 console.log(response);
                 this.$session.start();

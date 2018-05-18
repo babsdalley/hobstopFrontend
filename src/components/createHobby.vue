@@ -32,7 +32,7 @@ export default {
     },
     methods: {
         createNewHobby(){
-            this.$http.post('http://localhost:1337/hobby/createNewHobby', {name: this.name, userId: this.$session.get('userId')})
+            this.$http.post('https://hobstopbackend.herokuapp.com/hobby/createNewHobby', {name: this.name, userId: this.$session.get('userId')})
             .then(response => {
                 console.log(response);
                 this.successMessage = "Hobby created successfully!";
@@ -44,7 +44,7 @@ export default {
         }
     },
     beforeCreate(){
-        this.$http.get('http://localhost:1337/user/getUserDetails?userId=' + this.$session.get('userId'))
+        this.$http.get('https://hobstopbackend.herokuapp.com/user/getUserDetails?userId=' + this.$session.get('userId'))
         .then(response => {
             console.log(response);
             this.userDetails = response.body;
